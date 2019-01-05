@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CafeMedia Code Challenge</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .ad {
+      text-align: center;
+    }
+  </style>
+  <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+  <script>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+
+    googletag.cmd.push(() => {
+      var headerMapping = googletag.sizeMapping()
+        .addSize([0, 0], [320, 50])
+        .addSize([1000, 0], [728, 90])
+        .build();
+
+      googletag.defineSlot('/18190176/AdThrive_Header_1/test', [[320, 50]], 'header-ad')
+        .defineSizeMapping(headerMapping)
+        .addService(googletag.pubads());
+
+      googletag.pubads().setTargeting('siteId', 'test');
+      googletag.pubads().enableSingleRequest();
+
+      googletag.enableServices();
+    });
+
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <div id="header-ad" class="ad">
+      <script type="text/javascript">
+        googletag.cmd.push(() => {
+          googletag.display('header-ad');
+        });
+      </script>
+    </div>
+    <header class="header">
+      <h1>CafeMedia Code Challenge</h1>
+    </header>
+    <article class="main">
+      <h2>Instructions</h2>
+      <p>
+        The purpose of this challenge is for us to get a better idea of how you think, organize code, and tackle the problems at
+        hand. You can assume the latest version of Chrome will be used and can take advantage of any ECMAScript features it supports.
+        The challenge should be completed with no additional JavaScript libraries and should not take you longer than 4 hours.
+        Let us know if you have any questions.
+      </p>
+      <p>
+        You can find the Google GPT Reference <a href="https://developers.google.com/doubleclick-gpt/reference">here</a>
+      </p>
+      <p>
+        This file includes a base DFP setup that adds one ad above the header. We'd like you to update the file to:
+        <ol>
+          <li>Programatically insert ad slot DIV elements in the main article content between paragraphs after the DOM is ready
+            <ol>
+              <li>There should never be more than one ad visible at a time (excluding the header ad)
+                <ol>
+                  <li>This should be compatible on different platforms, but does not need to be responsive (only take initial page load dimensions into consideration)</li>
+                </ol>
+              </li>
+              <li>Ads should be inserted in a way to maximize the number of ads (max 9)</li>
+              <li>An ad should never be inserted after a paragraph that only contains an image</li>
+              <li>The ad unit path should be "/18190176/AdThrive_Content_X/test" where X increments and starts at 1</li>
+              <li>The slots should support sizes of 300x250 and 320x50
+            </ol>
+          </li>
+          <li>Make the header ad stick to the top of the window until it has been rendered for 5 seconds or is viewable for 2 seconds, whichever comes first.
+            Hint: You will need to use the googletag.events.SlotRenderEndedEvent and googletag.events.ImpressionViewableEvent events.</li>
+        </ol>
+      </p>
+      <p>
+        <h2>Setup / Running (optional)</h2>
+        To simplify local testing we've included a Node NPM package.json setup to run a local web server
+        <ol>
+          <li>Install Node.js v6 or higher</li>
+          <li>In the root of the project run "npm install" then "npm run server"</li>
+          <li>Open the latest version of Chrome to http://127.0.0.1:8080/</li>
+        </ol>
+        Alternatively, you can use an existing web server, or if you have Python installed you could run "python -m SimpleHTTPServer 8080" to test locally.
+      </p>
+      <p>
+        <img src="http://placehold.it/320x100" srcset"http://placehold.it/960x300 1000w"/>
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in quam eget est consectetur lacinia vitae non sem. Phasellus
+        commodo arcu elit, ut sollicitudin quam auctor non. Maecenas eget lectus iaculis, semper leo vel, facilisis augue.
+        Nullam ultricies mauris id porttitor semper. Sed dictum ut urna sit amet egestas. In hac habitasse platea dictumst.
+        Vivamus sed nulla malesuada, varius diam quis, scelerisque risus. In rutrum magna sed commodo efficitur. Pellentesque
+        dui quam, faucibus quis dictum in, congue in lorem. Vestibulum pretium, purus vel blandit aliquet, elit risus vestibulum
+        arcu, sit amet facilisis lorem lacus at elit.
+      </p>
+      <p>
+        Nullam aliquam sed quam et ultricies. Aenean nisl urna, hendrerit a vestibulum at, facilisis in dui. Nam bibendum mi sed
+        urna facilisis tristique. Curabitur dapibus massa eros, ac egestas sem tristique nec. Nullam commodo libero ac ultrices
+        dictum. Maecenas porta ante a libero ullamcorper placerat. Quisque a cursus justo. Pellentesque ac orci pulvinar,
+        vestibulum diam eu, accumsan purus. Sed tempus tincidunt consequat. Quisque vitae ullamcorper velit, eget convallis
+        mi. Donec tristique convallis tortor vel aliquet. Vivamus convallis nibh at iaculis facilisis.
+      </p>
+      <p>
+        <img src="http://placehold.it/320x240" srcset"http://placehold.it/640x480 1000w"/>
+      </p>
+      <p>
+        Phasellus rhoncus metus vehicula mauris luctus mattis. Integer ac ex ornare, tincidunt ex non, feugiat est. Aenean cursus
+        mi justo, quis dictum enim rhoncus vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+        himenaeos. Nunc sit amet magna eu massa ultricies laoreet ac a metus. Proin elementum congue lectus, non congue turpis
+        condimentum sed. In feugiat diam non ligula placerat egestas. Sed vel turpis vitae mi auctor porttitor eget placerat
+        nunc. Vestibulum nec est ac libero viverra elementum at quis nibh. Mauris quis augue egestas, tincidunt odio ut,
+        hendrerit arcu.
+      </p>
+      <p>
+        Duis bibendum sapien id feugiat mollis. Sed rutrum tincidunt nisl sit amet ultrices. Proin neque lorem, pellentesque id nisi
+        id, rutrum gravida lorem. Praesent nec urna sed tortor hendrerit eleifend et a mi. Etiam posuere aliquam lectus sit
+        amet semper. Donec molestie, tellus ut efficitur commodo, diam ante sollicitudin sem, et faucibus arcu lacus sit
+        amet ex. Aenean lorem leo, bibendum sit amet nisi sit amet, lobortis pulvinar ex. Cras volutpat in arcu sed fermentum.
+        Nullam rutrum scelerisque accumsan. Sed sodales, risus sed ornare tristique, odio arcu commodo sem, in porta nisi
+        urna accumsan nibh. Nam euismod tincidunt risus, vehicula fringilla urna fringilla et.
+      </p>
+      <p>
+        Proin nec euismod mauris. Nullam quis eros lectus. Pellentesque lacus leo, condimentum non tristique et, mattis vel nulla.
+        Vivamus vel rhoncus magna. Nulla hendrerit elit in lorem luctus, sed dapibus neque elementum. Duis commodo vel tortor
+        in tristique. Donec et sem in urna malesuada commodo.
+      </p>
+      <p>
+        In hac habitasse platea dictumst. Aenean porttitor pharetra malesuada. Phasellus ut leo eleifend, tempor ligula at, cursus
+        dolor. Nam dapibus metus id eleifend placerat. Vivamus congue, mi eu sodales tempor, turpis enim volutpat erat, nec
+        vehicula augue odio condimentum dui. Donec aliquet lacus interdum eros cursus luctus. Mauris fringilla nunc vitae
+        odio ultrices tincidunt. Donec ac nibh ac nisi viverra feugiat sit amet vel felis.
+      </p>
+      <p>
+        <img src="http://placehold.it/320x240" srcset"http://placehold.it/640x480 1000w"/>
+      </p>
+      <p>
+        Ut sit amet ex vitae tortor mattis semper vulputate sed eros. Suspendisse lacinia mi id tortor molestie, et mattis turpis
+        vestibulum. Aenean a neque non tortor eleifend tristique in sed libero. Maecenas et sagittis dolor, id commodo ante.
+        Sed mollis egestas risus sit amet venenatis. Nullam sit amet metus arcu. Cras commodo nisl quis sollicitudin fringilla.
+        Vivamus libero tortor, tincidunt sit amet turpis vitae, feugiat consectetur tortor. Nam at consectetur nulla, quis
+        lacinia lacus.
+      </p>
+      <p>
+        Pellentesque eleifend, arcu eget malesuada sagittis, velit lacus imperdiet ante, at bibendum enim neque eget tellus. Duis
+        ac auctor dui, ac elementum turpis. Aliquam nec nunc ipsum. Nunc lobortis tristique orci, vitae rhoncus ligula tristique
+        vel. Fusce arcu leo, faucibus eu imperdiet ut, pharetra nec elit. Nunc egestas, metus non malesuada dignissim, dui
+        metus iaculis quam, non varius nibh leo in magna. Donec tempus leo ex, eget dictum magna sollicitudin dapibus. Integer
+        pulvinar felis a iaculis gravida.
+      </p>
+      <p>
+        Maecenas suscipit congue dolor. Sed commodo rhoncus sem a venenatis. Vivamus faucibus a ligula non accumsan. Integer vitae
+        placerat massa. Maecenas pretium ex felis, ac rutrum libero tincidunt ac. Nam mollis ante id enim lacinia pretium.
+        Aliquam laoreet ligula sed lacus aliquet molestie. Sed dignissim a lacus eget suscipit. Nunc vulputate leo eget fermentum
+        eleifend. Aenean aliquam arcu velit, id malesuada diam suscipit facilisis. Quisque consequat sit amet felis at ultricies.
+        Fusce blandit leo quis eleifend viverra. Nam blandit elit lectus, id eleifend mi placerat a. Praesent sit amet commodo
+        est, et sodales enim. Quisque nec nunc mattis, sollicitudin lectus vel, aliquam magna. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.
+      </p>
+      <p>
+        Etiam auctor ac felis sed scelerisque. Nulla facilisi. Ut tempor lacus at leo lacinia, vel fermentum est ultrices. Integer
+        pellentesque purus nisl, hendrerit dapibus magna lacinia vehicula. Nunc volutpat tincidunt erat, eu fermentum tortor
+        porttitor eu. Curabitur dictum, quam eget scelerisque posuere, nibh tortor lacinia nisl, et luctus magna est nec
+        purus. Nam sollicitudin urna vitae vestibulum fermentum. Quisque vel tellus in enim pharetra vehicula. Sed quis leo
+        enim. Morbi condimentum, tortor vitae condimentum cursus, arcu velit elementum orci, vitae posuere justo est id ante.
+        Etiam vitae justo sed dui pulvinar fermentum in sed purus. Integer ut nisl a dolor congue eleifend. Suspendisse vestibulum
+        urna id sem pretium pretium.
+      </p>
+      <p>
+        <img src="http://placehold.it/320x240" srcset"http://placehold.it/640x480 1000w"/>
+      </p>
+      <p>
+        Integer faucibus et arcu ut auctor. Maecenas pretium erat gravida velit aliquet convallis. Nunc ipsum dui, convallis vitae
+        egestas sed, auctor quis leo. Mauris viverra facilisis tortor eget eleifend. Proin suscipit orci non malesuada viverra.
+        Aliquam euismod ac metus eu ullamcorper. Ut sed est odio. Donec non risus gravida, accumsan tellus sit amet, fermentum
+        diam. Suspendisse tortor mauris, eleifend id dui eget, mollis lacinia dui. Quisque vitae auctor orci. Nam cursus
+        ligula nisi, ac ullamcorper nisl lobortis ac. Sed vitae rutrum turpis. Donec dapibus gravida eros vitae sodales.
+        Nunc egestas dui mauris, eu fermentum mi viverra et. Etiam nec blandit nibh, vel pretium orci. Suspendisse diam sapien,
+        pulvinar in commodo a, laoreet eget diam.
+      </p>
+      <p>
+        Vestibulum varius ac magna sit amet fringilla. Phasellus convallis consectetur magna at cursus. Integer a enim ac orci vulputate
+        consequat. Phasellus odio lacus, feugiat sagittis luctus id, condimentum a nisi. Nulla facilisi. Nullam pellentesque
+        leo vitae viverra bibendum. Sed ut suscipit sem. Donec a elit id lorem aliquam rhoncus non id dolor. Sed ultricies
+        eros id odio imperdiet, sed varius neque facilisis.
+      </p>
+      <p>
+        Sed fermentum dictum feugiat. Integer vitae ultricies tellus, vitae faucibus erat. Proin aliquam facilisis scelerisque. Interdum
+        et malesuada fames ac ante ipsum primis in faucibus. Nunc a nibh erat. Donec in velit ut elit dapibus congue. Quisque
+        eu elit magna. Proin vitae tempor metus. Vivamus tempus ante ut felis hendrerit, sed pellentesque tellus venenatis.
+        Sed pulvinar, sapien in pharetra placerat, ipsum diam mollis nibh, id commodo justo enim id est.
+      </p>
+      <p>
+        Vestibulum sodales, ante sit amet rutrum facilisis, erat nisi vehicula orci, sed hendrerit ipsum urna non purus. Vivamus
+        risus lectus, porttitor vitae mauris id, ultricies gravida orci. Vivamus aliquam turpis elit, eu imperdiet nulla
+        lacinia nec. Proin nec accumsan sapien, quis egestas diam. Integer et rutrum arcu. Ut euismod augue metus, vitae
+        vestibulum libero tristique quis. Praesent vitae purus a felis vestibulum posuere a eget urna. Nunc turpis diam,
+        molestie et augue eu, gravida tristique ante. Morbi ac elit libero. Aenean consequat odio id iaculis efficitur. Morbi
+        at hendrerit nisl. Sed quis augue pellentesque lorem aliquet eleifend sit amet vitae odio.
+      </p>
+      <p>
+        Etiam consectetur, leo sed ornare tristique, neque quam ullamcorper diam, et tempor nisl turpis at mauris. Sed ornare ligula
+        a ultricies rutrum. Suspendisse nec lorem ex. Integer quis dictum felis. Vestibulum fermentum quam et enim vestibulum,
+        tempus tristique massa malesuada. Suspendisse eget vulputate nisl. Proin suscipit vitae massa eu fringilla. In lorem
+        dui, interdum pellentesque tincidunt at, pretium a augue. Nulla varius venenatis mauris finibus varius. Aenean sed
+        vulputate libero, et convallis tortor.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in quam eget est consectetur lacinia vitae non sem. Phasellus
+        commodo arcu elit, ut sollicitudin quam auctor non. Maecenas eget lectus iaculis, semper leo vel, facilisis augue.
+        Nullam ultricies mauris id porttitor semper. Sed dictum ut urna sit amet egestas. In hac habitasse platea dictumst.
+        Vivamus sed nulla malesuada, varius diam quis, scelerisque risus. In rutrum magna sed commodo efficitur. Pellentesque
+        dui quam, faucibus quis dictum in, congue in lorem. Vestibulum pretium, purus vel blandit aliquet, elit risus vestibulum
+        arcu, sit amet facilisis lorem lacus at elit.
+      </p>
+      <p>
+        Nullam aliquam sed quam et ultricies. Aenean nisl urna, hendrerit a vestibulum at, facilisis in dui. Nam bibendum mi sed
+        urna facilisis tristique. Curabitur dapibus massa eros, ac egestas sem tristique nec. Nullam commodo libero ac ultrices
+        dictum. Maecenas porta ante a libero ullamcorper placerat. Quisque a cursus justo. Pellentesque ac orci pulvinar,
+        vestibulum diam eu, accumsan purus. Sed tempus tincidunt consequat. Quisque vitae ullamcorper velit, eget convallis
+        mi. Donec tristique convallis tortor vel aliquet. Vivamus convallis nibh at iaculis facilisis.
+      </p>
+      <p>
+        <img src="http://placehold.it/320x240" srcset"http://placehold.it/640x480 1000w"/>
+      </p>
+      <p>
+        Phasellus rhoncus metus vehicula mauris luctus mattis. Integer ac ex ornare, tincidunt ex non, feugiat est. Aenean cursus
+        mi justo, quis dictum enim rhoncus vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+        himenaeos. Nunc sit amet magna eu massa ultricies laoreet ac a metus. Proin elementum congue lectus, non congue turpis
+        condimentum sed. In feugiat diam non ligula placerat egestas. Sed vel turpis vitae mi auctor porttitor eget placerat
+        nunc. Vestibulum nec est ac libero viverra elementum at quis nibh. Mauris quis augue egestas, tincidunt odio ut,
+        hendrerit arcu.
+      </p>
+      <p>
+        Duis bibendum sapien id feugiat mollis. Sed rutrum tincidunt nisl sit amet ultrices. Proin neque lorem, pellentesque id nisi
+        id, rutrum gravida lorem. Praesent nec urna sed tortor hendrerit eleifend et a mi. Etiam posuere aliquam lectus sit
+        amet semper. Donec molestie, tellus ut efficitur commodo, diam ante sollicitudin sem, et faucibus arcu lacus sit
+        amet ex. Aenean lorem leo, bibendum sit amet nisi sit amet, lobortis pulvinar ex. Cras volutpat in arcu sed fermentum.
+        Nullam rutrum scelerisque accumsan. Sed sodales, risus sed ornare tristique, odio arcu commodo sem, in porta nisi
+        urna accumsan nibh. Nam euismod tincidunt risus, vehicula fringilla urna fringilla et.
+      </p>
+      <p>
+        Proin nec euismod mauris. Nullam quis eros lectus. Pellentesque lacus leo, condimentum non tristique et, mattis vel nulla.
+        Vivamus vel rhoncus magna. Nulla hendrerit elit in lorem luctus, sed dapibus neque elementum. Duis commodo vel tortor
+        in tristique. Donec et sem in urna malesuada commodo.
+      </p>
+      <p>
+        In hac habitasse platea dictumst. Aenean porttitor pharetra malesuada. Phasellus ut leo eleifend, tempor ligula at, cursus
+        dolor. Nam dapibus metus id eleifend placerat. Vivamus congue, mi eu sodales tempor, turpis enim volutpat erat, nec
+        vehicula augue odio condimentum dui. Donec aliquet lacus interdum eros cursus luctus. Mauris fringilla nunc vitae
+        odio ultrices tincidunt. Donec ac nibh ac nisi viverra feugiat sit amet vel felis.
+      </p>
+      <p>
+        <img src="http://placehold.it/320x240" srcset"http://placehold.it/640x480 1000w"/>
+      </p>
+      <p>
+        Ut sit amet ex vitae tortor mattis semper vulputate sed eros. Suspendisse lacinia mi id tortor molestie, et mattis turpis
+        vestibulum. Aenean a neque non tortor eleifend tristique in sed libero. Maecenas et sagittis dolor, id commodo ante.
+        Sed mollis egestas risus sit amet venenatis. Nullam sit amet metus arcu. Cras commodo nisl quis sollicitudin fringilla.
+        Vivamus libero tortor, tincidunt sit amet turpis vitae, feugiat consectetur tortor. Nam at consectetur nulla, quis
+        lacinia lacus.
+      </p>
+      <p>
+        Pellentesque eleifend, arcu eget malesuada sagittis, velit lacus imperdiet ante, at bibendum enim neque eget tellus. Duis
+        ac auctor dui, ac elementum turpis. Aliquam nec nunc ipsum. Nunc lobortis tristique orci, vitae rhoncus ligula tristique
+        vel. Fusce arcu leo, faucibus eu imperdiet ut, pharetra nec elit. Nunc egestas, metus non malesuada dignissim, dui
+        metus iaculis quam, non varius nibh leo in magna. Donec tempus leo ex, eget dictum magna sollicitudin dapibus. Integer
+        pulvinar felis a iaculis gravida.
+      </p>
+      <p>
+        Maecenas suscipit congue dolor. Sed commodo rhoncus sem a venenatis. Vivamus faucibus a ligula non accumsan. Integer vitae
+        placerat massa. Maecenas pretium ex felis, ac rutrum libero tincidunt ac. Nam mollis ante id enim lacinia pretium.
+        Aliquam laoreet ligula sed lacus aliquet molestie. Sed dignissim a lacus eget suscipit. Nunc vulputate leo eget fermentum
+        eleifend. Aenean aliquam arcu velit, id malesuada diam suscipit facilisis. Quisque consequat sit amet felis at ultricies.
+        Fusce blandit leo quis eleifend viverra. Nam blandit elit lectus, id eleifend mi placerat a. Praesent sit amet commodo
+        est, et sodales enim. Quisque nec nunc mattis, sollicitudin lectus vel, aliquam magna. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.
+      </p>
+      <p>
+        Etiam auctor ac felis sed scelerisque. Nulla facilisi. Ut tempor lacus at leo lacinia, vel fermentum est ultrices. Integer
+        pellentesque purus nisl, hendrerit dapibus magna lacinia vehicula. Nunc volutpat tincidunt erat, eu fermentum tortor
+        porttitor eu. Curabitur dictum, quam eget scelerisque posuere, nibh tortor lacinia nisl, et luctus magna est nec
+        purus. Nam sollicitudin urna vitae vestibulum fermentum. Quisque vel tellus in enim pharetra vehicula. Sed quis leo
+        enim. Morbi condimentum, tortor vitae condimentum cursus, arcu velit elementum orci, vitae posuere justo est id ante.
+        Etiam vitae justo sed dui pulvinar fermentum in sed purus. Integer ut nisl a dolor congue eleifend. Suspendisse vestibulum
+        urna id sem pretium pretium.
+      </p>
+      <p>
+        <img src="http://placehold.it/320x240" srcset"http://placehold.it/640x480 1000w"/>
+      </p>
+      <p>
+        Integer faucibus et arcu ut auctor. Maecenas pretium erat gravida velit aliquet convallis. Nunc ipsum dui, convallis vitae
+        egestas sed, auctor quis leo. Mauris viverra facilisis tortor eget eleifend. Proin suscipit orci non malesuada viverra.
+        Aliquam euismod ac metus eu ullamcorper. Ut sed est odio. Donec non risus gravida, accumsan tellus sit amet, fermentum
+        diam. Suspendisse tortor mauris, eleifend id dui eget, mollis lacinia dui. Quisque vitae auctor orci. Nam cursus
+        ligula nisi, ac ullamcorper nisl lobortis ac. Sed vitae rutrum turpis. Donec dapibus gravida eros vitae sodales.
+        Nunc egestas dui mauris, eu fermentum mi viverra et. Etiam nec blandit nibh, vel pretium orci. Suspendisse diam sapien,
+        pulvinar in commodo a, laoreet eget diam.
+      </p>
+      <p>
+        Vestibulum varius ac magna sit amet fringilla. Phasellus convallis consectetur magna at cursus. Integer a enim ac orci vulputate
+        consequat. Phasellus odio lacus, feugiat sagittis luctus id, condimentum a nisi. Nulla facilisi. Nullam pellentesque
+        leo vitae viverra bibendum. Sed ut suscipit sem. Donec a elit id lorem aliquam rhoncus non id dolor. Sed ultricies
+        eros id odio imperdiet, sed varius neque facilisis.
+      </p>
+      <p>
+        Sed fermentum dictum feugiat. Integer vitae ultricies tellus, vitae faucibus erat. Proin aliquam facilisis scelerisque. Interdum
+        et malesuada fames ac ante ipsum primis in faucibus. Nunc a nibh erat. Donec in velit ut elit dapibus congue. Quisque
+        eu elit magna. Proin vitae tempor metus. Vivamus tempus ante ut felis hendrerit, sed pellentesque tellus venenatis.
+        Sed pulvinar, sapien in pharetra placerat, ipsum diam mollis nibh, id commodo justo enim id est.
+      </p>
+      <p>
+        Vestibulum sodales, ante sit amet rutrum facilisis, erat nisi vehicula orci, sed hendrerit ipsum urna non purus. Vivamus
+        risus lectus, porttitor vitae mauris id, ultricies gravida orci. Vivamus aliquam turpis elit, eu imperdiet nulla
+        lacinia nec. Proin nec accumsan sapien, quis egestas diam. Integer et rutrum arcu. Ut euismod augue metus, vitae
+        vestibulum libero tristique quis. Praesent vitae purus a felis vestibulum posuere a eget urna. Nunc turpis diam,
+        molestie et augue eu, gravida tristique ante. Morbi ac elit libero. Aenean consequat odio id iaculis efficitur. Morbi
+        at hendrerit nisl. Sed quis augue pellentesque lorem aliquet eleifend sit amet vitae odio.
+      </p>
+      <p>
+        Etiam consectetur, leo sed ornare tristique, neque quam ullamcorper diam, et tempor nisl turpis at mauris. Sed ornare ligula
+        a ultricies rutrum. Suspendisse nec lorem ex. Integer quis dictum felis. Vestibulum fermentum quam et enim vestibulum,
+        tempus tristique massa malesuada. Suspendisse eget vulputate nisl. Proin suscipit vitae massa eu fringilla. In lorem
+        dui, interdum pellentesque tincidunt at, pretium a augue. Nulla varius venenatis mauris finibus varius. Aenean sed
+        vulputate libero, et convallis tortor.
+      </p>
+    </article>
+  </div>
+</body>
+</html>
