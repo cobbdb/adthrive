@@ -1,102 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
   <title>CafeMedia Code Challenge</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <style>
-    .wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    img {
-      display: block;
-      margin: 0 auto;
-    }
-
-    .ad {
-      text-align: center;
-    }
-  </style>
-  <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
-  <script>
-    var googletag = googletag || {};
-    googletag.cmd = googletag.cmd || [];
-
-    googletag.cmd.push(() => {
-      var headerMapping = googletag.sizeMapping()
-        .addSize([0, 0], [320, 50])
-        .addSize([1000, 0], [728, 90])
-        .build();
-
-      googletag.defineSlot('/18190176/AdThrive_Header_1/test', [[320, 50]], 'header-ad')
-        .defineSizeMapping(headerMapping)
-        .addService(googletag.pubads());
-
-      googletag.pubads().setTargeting('siteId', 'test');
-      googletag.pubads().enableSingleRequest();
-
-      googletag.enableServices();
-    });
-
-  </script>
 </head>
 <body>
   <div class="wrapper">
-    <div id="header-ad" class="ad">
-      <script type="text/javascript">
-        googletag.cmd.push(() => {
-          googletag.display('header-ad');
-        });
-      </script>
-    </div>
+    <div id="at-ad-header" class="at-ad at-ad-header"></div>
+
     <header class="header">
       <h1>CafeMedia Code Challenge</h1>
     </header>
     <article class="main">
-      <h2>Instructions</h2>
       <p>
-        The purpose of this challenge is for us to get a better idea of how you think, organize code, and tackle the problems at
-        hand. You can assume the latest version of Chrome will be used and can take advantage of any ECMAScript features it supports.
-        The challenge should be completed with no additional JavaScript libraries and should not take you longer than 4 hours.
-        Let us know if you have any questions.
-      </p>
-      <p>
-        You can find the Google GPT Reference <a href="https://developers.google.com/doubleclick-gpt/reference">here</a>
-      </p>
-      <p>
-        This file includes a base DFP setup that adds one ad above the header. We'd like you to update the file to:
-        <ol>
-          <li>Programatically insert ad slot DIV elements in the main article content between paragraphs after the DOM is ready
-            <ol>
-              <li>There should never be more than one ad visible at a time (excluding the header ad)
-                <ol>
-                  <li>This should be compatible on different platforms, but does not need to be responsive (only take initial page load dimensions into consideration)</li>
-                </ol>
-              </li>
-              <li>Ads should be inserted in a way to maximize the number of ads (max 9)</li>
-              <li>An ad should never be inserted after a paragraph that only contains an image</li>
-              <li>The ad unit path should be "/18190176/AdThrive_Content_X/test" where X increments and starts at 1</li>
-              <li>The slots should support sizes of 300x250 and 320x50
-            </ol>
-          </li>
-          <li>Make the header ad stick to the top of the window until it has been rendered for 5 seconds or is viewable for 2 seconds, whichever comes first.
-            Hint: You will need to use the googletag.events.SlotRenderEndedEvent and googletag.events.ImpressionViewableEvent events.</li>
-        </ol>
-      </p>
-      <p>
-        <h2>Setup / Running (optional)</h2>
-        To simplify local testing we've included a Node NPM package.json setup to run a local web server
-        <ol>
-          <li>Install Node.js v6 or higher</li>
-          <li>In the root of the project run "npm install" then "npm run server"</li>
-          <li>Open the latest version of Chrome to http://127.0.0.1:8080/</li>
-        </ol>
-        Alternatively, you can use an existing web server, or if you have Python installed you could run "python -m SimpleHTTPServer 8080" to test locally.
-      </p>
-      <p>
-        <img src="http://placehold.it/320x100" srcset"http://placehold.it/960x300 1000w"/>
+        <img
+          src="http://placehold.it/320x100"
+          srcset="http://placehold.it/320x100 320w,
+                  http://placehold.it/960x300 960w"
+          sizes="(max-width: 1000px) 320px,
+                 960px"
+        />
       </p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in quam eget est consectetur lacinia vitae non sem. Phasellus
@@ -114,7 +38,13 @@
         mi. Donec tristique convallis tortor vel aliquet. Vivamus convallis nibh at iaculis facilisis.
       </p>
       <p>
-        <img src="http://placehold.it/320x240" srcset"http://placehold.it/640x480 1000w"/>
+        <img
+          src="http://placehold.it/320x241"
+          srcset="http://placehold.it/320x240 320w,
+                  http://placehold.it/640x480 640w"
+          sizes="(max-width: 1000px) 330px,
+                 640px"
+        />
       </p>
       <p>
         Phasellus rhoncus metus vehicula mauris luctus mattis. Integer ac ex ornare, tincidunt ex non, feugiat est. Aenean cursus
@@ -144,7 +74,13 @@
         odio ultrices tincidunt. Donec ac nibh ac nisi viverra feugiat sit amet vel felis.
       </p>
       <p>
-        <img src="http://placehold.it/320x240" srcset"http://placehold.it/640x480 1000w"/>
+        <img
+          src="http://placehold.it/320x240"
+          srcset="http://placehold.it/320x240 320w,
+                  http://placehold.it/640x480 640w"
+          sizes="(max-width: 1000px) 320px,
+                 640px"
+        />
       </p>
       <p>
         Ut sit amet ex vitae tortor mattis semper vulputate sed eros. Suspendisse lacinia mi id tortor molestie, et mattis turpis
@@ -179,7 +115,13 @@
         urna id sem pretium pretium.
       </p>
       <p>
-        <img src="http://placehold.it/320x240" srcset"http://placehold.it/640x480 1000w"/>
+        <img
+          src="http://placehold.it/320x240"
+          srcset="http://placehold.it/320x240 320w,
+                  http://placehold.it/640x480 640w"
+          sizes="(max-width: 1000px) 320px,
+                 640px"
+        />
       </p>
       <p>
         Integer faucibus et arcu ut auctor. Maecenas pretium erat gravida velit aliquet convallis. Nunc ipsum dui, convallis vitae
@@ -233,7 +175,13 @@
         mi. Donec tristique convallis tortor vel aliquet. Vivamus convallis nibh at iaculis facilisis.
       </p>
       <p>
-        <img src="http://placehold.it/320x240" srcset"http://placehold.it/640x480 1000w"/>
+        <img
+          src="http://placehold.it/320x240"
+          srcset="http://placehold.it/320x240 320w,
+                  http://placehold.it/640x480 640w"
+          sizes="(max-width: 1000px) 320px,
+                 640px"
+        />
       </p>
       <p>
         Phasellus rhoncus metus vehicula mauris luctus mattis. Integer ac ex ornare, tincidunt ex non, feugiat est. Aenean cursus
@@ -263,7 +211,13 @@
         odio ultrices tincidunt. Donec ac nibh ac nisi viverra feugiat sit amet vel felis.
       </p>
       <p>
-        <img src="http://placehold.it/320x240" srcset"http://placehold.it/640x480 1000w"/>
+        <img
+          src="http://placehold.it/320x240"
+          srcset="http://placehold.it/320x240 320w,
+                  http://placehold.it/640x480 640w"
+          sizes="(max-width: 1000px) 320px,
+                 640px"
+        />
       </p>
       <p>
         Ut sit amet ex vitae tortor mattis semper vulputate sed eros. Suspendisse lacinia mi id tortor molestie, et mattis turpis
@@ -298,7 +252,13 @@
         urna id sem pretium pretium.
       </p>
       <p>
-        <img src="http://placehold.it/320x240" srcset"http://placehold.it/640x480 1000w"/>
+        <img
+          src="http://placehold.it/320x240"
+          srcset="http://placehold.it/320x240 320w,
+                  http://placehold.it/640x480 640w"
+          sizes="(max-width: 1000px) 320px,
+                 640px"
+        />
       </p>
       <p>
         Integer faucibus et arcu ut auctor. Maecenas pretium erat gravida velit aliquet convallis. Nunc ipsum dui, convallis vitae
@@ -338,5 +298,7 @@
       </p>
     </article>
   </div>
+
+  <script src="https://www.googletagservices.com/tag/js/gpt.js"></script>
 </body>
 </html>

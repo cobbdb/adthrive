@@ -1,0 +1,11 @@
+{
+  "env": {
+    "browser": true,
+  },
+  "extends": [
+    "airbnb-base",
+  ],
+  "settings": {
+    "import/resolver": "webpack"
+  }
+}
