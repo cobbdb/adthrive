@@ -13,10 +13,7 @@ export default function generate() {
   nodes = [...nodes];
 
   // Filter out all the nodes with image children.
-  nodes = nodes.filter((p) => {
-    const child = p.firstElementChild;
-    return !child || child.nodeName.toLowerCase() !== 'img';
-  });
+  nodes = nodes.filter(p => !p.querySelector('img'));
 
   // Retain slot references for easy access if needed.
   const slots = [];
